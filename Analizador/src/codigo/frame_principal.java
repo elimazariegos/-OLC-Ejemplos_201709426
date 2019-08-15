@@ -43,6 +43,8 @@ public class frame_principal extends javax.swing.JFrame {
         txt_analizar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         txt_consola = new javax.swing.JTextArea();
+        jTextField1 = new javax.swing.JTextField();
+        btn_abrir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,15 +63,29 @@ public class frame_principal extends javax.swing.JFrame {
         txt_consola.setRows(5);
         jScrollPane2.setViewportView(txt_consola);
 
+        jTextField1.setText("jTextField1");
+
+        btn_abrir.setText("Abrir");
+        btn_abrir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_abrirActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jTextField1)
+                            .addGap(18, 18, 18)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 520, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_abrir))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addComponent(txt_analizar)
                 .addContainerGap())
@@ -78,9 +94,13 @@ public class frame_principal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_analizar)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn_abrir))
+                .addGap(4, 4, 4)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextField1)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 264, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
                 .addContainerGap())
@@ -112,9 +132,6 @@ public class frame_principal extends javax.swing.JFrame {
                     return;
                 }
                 switch (tokens) {
-                    case Reservadas:
-                        resultado += lexer.lexeme + " Palabra reservada\n";
-                        break;
                     case Identificador:
                         resultado += lexer.lexeme + " Identificador\n";
                         break;
@@ -144,6 +161,10 @@ public class frame_principal extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_txt_analizarActionPerformed
+
+    private void btn_abrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_abrirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_abrirActionPerformed
 
     /**
      * @param args the command line arguments
@@ -181,8 +202,10 @@ public class frame_principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_abrir;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JButton txt_analizar;
     private javax.swing.JTextArea txt_consola;
     private javax.swing.JTextArea txt_editor;

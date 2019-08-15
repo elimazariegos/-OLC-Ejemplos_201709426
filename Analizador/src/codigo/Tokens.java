@@ -10,12 +10,22 @@ package codigo;
  * @author Samuel
  */
 public enum Tokens {
-    Reservadas,
+    Linea,
+    Int,
+    If,
+    Else,
+    While,
     Igual,
     Suma,
     Resta,
     Multiplicacion,
     Division,
+    Parentesis_a,
+    Parentesis_c,
+    Llave_a,
+    Llave_c,
+    Main,
+    punto_y_coma,
     Identificador,
     Numero,
     ERROR
